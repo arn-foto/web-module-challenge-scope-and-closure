@@ -25,11 +25,13 @@ function processFirstItem(stringList, callback) {
 
 /* Task 1: `counterMaker`
  * Study the code for counter1 and counter2. Answer the questions below.
- * 
+ *  
  * 1. What is the difference between counter1 and counter2?
+ *    counter1 has a private variable that can only be accessed by that particular function, but are free to use anywhere within that function. 
+ *    counter2 is global and be accessed anywhere.
  * 
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ *     
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
 */
@@ -38,18 +40,15 @@ function processFirstItem(stringList, callback) {
 function counterMaker() {
   let count = 0;
   return function counter() {
-    count++;
+   return count++;
   }
 }
-
 const counter1 = counterMaker();
+
 
 // counter2 code
 let count = 0;
-
 function counter2() {
-  return count++;
-}
 
 
 /* Task 2: inning() 
